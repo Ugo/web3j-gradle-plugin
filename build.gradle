@@ -1,4 +1,5 @@
 apply plugin : 'java-gradle-plugin'
+apply plugin : 'maven'
 
 repositories {
     mavenCentral()
@@ -7,8 +8,8 @@ repositories {
 }
 
 dependencies {
-    compile "org.ethereum:ethereumj-core:1.6.3-RELEASE"
-    compile "org.web3j:codegen:3.3.1"
+    compile "org.ethereum:ethereumj-core:1.7.0-RELEASE"
+    compile "org.web3j:codegen:3.2.0"
 
     testCompile 'junit:junit:4.12'
 }
@@ -16,7 +17,7 @@ dependencies {
 gradlePlugin {
     plugins {
         web3jgradleplugin {
-            id = 'org.example.greeting'
+            id = 'web3j-gradle-plugin'
             implementationClass = 'org.web3j.gradleplugin.Web3jGradlePlugin'
         }
     }

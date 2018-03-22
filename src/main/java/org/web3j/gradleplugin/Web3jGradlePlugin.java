@@ -6,8 +6,8 @@ import org.gradle.api.Project;
 public class Web3jGradlePlugin implements Plugin<Project> {
 
     public void apply(Project project) {
-        project.getTasks().create("hello", SolcCompilerTask.class, (task) -> {
-
+        project.getTasks().create("generateJava", GenerateJavaTask.class, (task) -> {
+            task.setContractName("michel.sol");
         });
     }
 }
